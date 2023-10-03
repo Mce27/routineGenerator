@@ -1,0 +1,5 @@
+#name,startDirection,endDirection,style,dance,endPosition,timing,startFoot,endFoot,level
+Natural Turn, DW, BLOD, STD, WALTZ, I, 123, Right, Left, N
+Reverse Turn, BLOD, DC, STD, WALTZ, I, 456, Left, Right, N
+Change Step, DC, DC, STD, WALTZ, I, 123, Right, Left, N
+Reverse Turn, DC, BLOD, STD, WALTZ, I, 456, Right, Left, N
