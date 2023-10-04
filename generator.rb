@@ -28,14 +28,7 @@ class Figure
 end
 
 class Routine
-  @figureArray = []
-  @totalDistance = nil
-  @currentPosition = nil
-  @currentDirection = nil
-  @lastFigure = nil
-  @startCount = 1
-  @endCount = nil
-  @figureDB = {}
+
   def initialize(style, dance, floorDim, level, dancerSpec, startPosition, startWall, startDirection)
     @style = style
     @dance = dance
@@ -45,12 +38,19 @@ class Routine
     @startPosition = startPosition
     @startWall = startWall
     @startDirection = startDirection
+    @figureArray = []
+    @totalDistance = nil
+    @currentPosition = nil
+    @currentDirection = nil
+    @lastFigure = nil
+    @startCount = 1
+    @endCount = nil
+    @figureDB = {}
   end
 
   def readFigures()
-    file = open('figures.txt')
-    figures = file.read
-    figures = figures.split '\n'
+    file = open('figures.csv')
+    figures = file.readlines
     #Build @figureDB
     for line in figures
       name, startDirection, endDirection, style, dance, endPosition, timing, startFoot, endFoot, level = line.split','.strip
@@ -68,10 +68,13 @@ class Routine
       @figure[level][style][dance].push figure
     end
   end
+  def figureDB
+    @figureDB
+  end
 
   def generateWall(wall)
     #floorDim is a [legth,width] of the floor
-    while totalDistance < floorDim[0]
+    while @totalDistance < @floorDim[0]
 
     end
   end
@@ -82,3 +85,7 @@ class Routine
 
 
 end
+
+r = Routine.new("STD","WATLZ",[10,10],"N",1,"I","Long","DW")
+r.readFigures
+puts r.figureDB
