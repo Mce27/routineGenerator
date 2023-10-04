@@ -1,3 +1,4 @@
+# typed: true
 class Figure
     def initialize(name,startDirection,endDirection,style,dance,endPosition,timing,startFoot,endFoot,level)
       @name = name
