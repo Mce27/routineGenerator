@@ -1,5 +1,13 @@
-#name        ,startDirection ,endDirection ,style ,dance ,endPosition ,timing  ,startFoot ,endFoot ,level
-Natural Turn ,DW             ,DC           ,STD   ,WALTZ ,I           ,123 456 ,Right     ,Right   ,N
-Change Step  ,DC             ,DC           ,STD   ,WALTZ ,I           ,123     ,Right     ,Left    ,N
-Reverse Turn ,DC             ,DW           ,STD   ,WALTZ ,I           ,456 123 ,Left      ,Left    ,N
-Change Step  ,DW             ,DW           ,STD   ,WALTZ ,I           ,456     ,Left      ,Right   ,N
+#name                   ,startDirection ,endDirection ,style ,dance ,startPosition ,endPosition ,timing ,startFoot ,endFoot ,level ,xdisp ,ydixp
+Natural Turn            ,DW             ,BLOD         ,STD   ,WALTZ ,I             ,I           ,   123 ,Right     ,Left    ,N     ,0     ,1
+Natural Turn            ,DW             ,BLOD         ,STD   ,WALTZ ,O             ,I           ,   123 ,Right     ,Left    ,N     ,0     ,1
+Natural Turn            ,BLOD           ,DC           ,STD   ,WALTZ ,I             ,I           ,   456 ,Left      ,Right   ,N     ,1     ,0
+Change Step             ,DC             ,DC           ,STD   ,WALTZ ,I             ,I           ,   123 ,Right     ,Left    ,N     ,-0.5  ,-0.5
+Reverse Turn            ,DC             ,LOD          ,STD   ,WALTZ ,I             ,I           ,   456 ,Left      ,Right   ,N     ,0     ,-1
+Reverse Turn            ,LOD            ,DW           ,STD   ,WALTZ ,I             ,I           ,   123 ,Right     ,Left    ,N     ,1     ,0
+Reverse Turn            ,DW             ,DC           ,STD   ,WALTZ ,I             ,I           ,   123 ,Right     ,Left    ,N     ,-0.5     ,-1
+Reverse Turn            ,BDC            ,DW           ,STD   ,WALTZ ,I             ,I           ,   123 ,Right     ,Left    ,N     ,1     ,0
+Change Step             ,DW             ,DW           ,STD   ,WALTZ ,I             ,I           ,   456 ,Left      ,Right   ,N     ,-0.5  ,0.5
+Spin Turn (underturned) ,BLOD           ,DW           ,STD   ,WALTZ ,I             ,I           ,   456 ,Left      ,Right   ,N     ,1     ,0
+Whisk                   ,DW             ,LOD          ,STD   ,WALTZ ,I             ,PP          ,   123 ,Left      ,Right   ,N     ,-0.5  ,1
+Chasse from PP          ,LOD            ,DW           ,STD   ,WALTZ ,PP            ,O           ,   456 ,Right     ,Right   ,N     ,2     ,0
