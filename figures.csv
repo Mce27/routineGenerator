@@ -1,13 +1,13 @@
-#name                   ,startDirection ,endDirection ,style ,dance ,startPosition ,endPosition ,timing ,startFoot ,endFoot ,level ,xdisp ,ydixp
-Natural Turn            ,DW             ,BLOD         ,STD   ,WALTZ ,I             ,I           ,   123 ,Right     ,Left    ,N     ,0     ,1
-Natural Turn            ,DW             ,BLOD         ,STD   ,WALTZ ,O             ,I           ,   123 ,Right     ,Left    ,N     ,0     ,1
-Natural Turn            ,BLOD           ,DC           ,STD   ,WALTZ ,I             ,I           ,   456 ,Left      ,Right   ,N     ,1     ,0
-Change Step             ,DC             ,DC           ,STD   ,WALTZ ,I             ,I           ,   123 ,Right     ,Left    ,N     ,-0.5  ,-0.5
-Reverse Turn            ,DC             ,LOD          ,STD   ,WALTZ ,I             ,I           ,   456 ,Left      ,Right   ,N     ,0     ,-1
-Reverse Turn            ,LOD            ,DW           ,STD   ,WALTZ ,I             ,I           ,   123 ,Right     ,Left    ,N     ,1     ,0
-Reverse Turn            ,DW             ,DC           ,STD   ,WALTZ ,I             ,I           ,   123 ,Right     ,Left    ,N     ,-0.5     ,-1
-Reverse Turn            ,BDC            ,DW           ,STD   ,WALTZ ,I             ,I           ,   123 ,Right     ,Left    ,N     ,1     ,0
-Change Step             ,DW             ,DW           ,STD   ,WALTZ ,I             ,I           ,   456 ,Left      ,Right   ,N     ,-0.5  ,0.5
-Spin Turn (underturned) ,BLOD           ,DW           ,STD   ,WALTZ ,I             ,I           ,   456 ,Left      ,Right   ,N     ,1     ,0
-Whisk                   ,DW             ,LOD          ,STD   ,WALTZ ,I             ,PP          ,   123 ,Left      ,Right   ,N     ,-0.5  ,1
-Chasse from PP          ,LOD            ,DW           ,STD   ,WALTZ ,PP            ,O           ,   456 ,Right     ,Right   ,N     ,2     ,0
+#name                   ,startDirection ,endDirection ,style ,dance ,startPosition ,endPosition ,timing ,startFoot ,endFoot ,level ,startMomentum ,endMomentum ,xdisp ,ydixp
+Natural Turn            ,DW             ,BLOD         ,STD   ,WALTZ ,I             ,I           ,   123 ,Right     ,Left    ,N     ,DW            ,LOD         ,0     ,1
+Natural Turn            ,DW             ,BLOD         ,STD   ,WALTZ ,O             ,I           ,   123 ,Right     ,Left    ,N     ,DW            ,LOD         ,0     ,1
+Natural Turn            ,BLOD           ,DC           ,STD   ,WALTZ ,I             ,I           ,   456 ,Left      ,Right   ,N     ,LOD           ,DC          ,1     ,0
+Change Step             ,DC             ,DC           ,STD   ,WALTZ ,I             ,I           ,   123 ,Right     ,Left    ,N     ,DC            ,DC          ,-0.5  ,-0.5
+Reverse Turn            ,DC             ,BLOD         ,STD   ,WALTZ ,I             ,I           ,   456 ,Left      ,Right   ,N     ,DC            ,LOD         ,0     ,-1
+Reverse Turn            ,BLOD           ,DW           ,STD   ,WALTZ ,I             ,I           ,   123 ,Right     ,Left    ,N     ,LOD           ,DW          ,1     ,0
+Reverse Turn            ,DW             ,DC           ,STD   ,WALTZ ,I             ,I           ,   123 ,Right     ,Left    ,N     ,BDW           ,DC          ,-0.5  ,-1
+Reverse Turn            ,BDC            ,DW           ,STD   ,WALTZ ,I             ,I           ,   123 ,Right     ,Left    ,N     ,DC            ,DW          ,1     ,0
+Change Step             ,DW             ,DW           ,STD   ,WALTZ ,I             ,I           ,   456 ,Left      ,Right   ,N     ,DW            ,DW          ,-0.5  ,0.5
+Spin Turn (underturned) ,BLOD           ,DW           ,STD   ,WALTZ ,I             ,I           ,   456 ,Left      ,Right   ,N     ,LOD           ,BDW          ,1     ,0
+Whisk                   ,DW             ,LOD          ,STD   ,WALTZ ,I             ,PP          ,   123 ,Left      ,Right   ,N     ,DW            ,LOD         ,-0.5  ,1
+Chasse from PP          ,LOD            ,DW           ,STD   ,WALTZ ,PP            ,O           ,   456 ,Right     ,Right   ,N     ,LOD           ,DW          ,2     ,0

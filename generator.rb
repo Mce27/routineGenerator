@@ -1,6 +1,6 @@
 # typed: true
 class Figure
-    def initialize(name,startDirection,endDirection,style,dance,startPosition,endPosition,timing,startFoot,endFoot,level,xdisp,ydisp)
+    def initialize(name,startDirection,endDirection,style,dance,startPosition,endPosition,timing,startFoot,endFoot,level,startMomentum,endMomentum,xdisp,ydisp)
       @name = name
       @startDirection = startDirection
       @endDirection = endDirection
@@ -12,6 +12,8 @@ class Figure
       @startFoot = startFoot
       @endFoot = endFoot
       @level = level
+      @startMomentum = startMomentum
+      @endMomentum= endMomentum
       @xdisp = xdisp
       @ydisp = ydisp
     end
@@ -28,6 +30,8 @@ class Figure
       'startFoot':@startFoot,
       'endFoot':@endFoot,
       'level':@level,
+      'startMomentum':@startMomentum,
+      'endMomentum':@endMomentum,
       'xdisp':@xdisp,
       'ydisp':@ydisp
     }
@@ -66,8 +70,8 @@ class Routine
       if line.start_with?"#"
         next
       end
-      name, startDirection, endDirection, style, dance, startPosition, endPosition, timing, startFoot, endFoot, level, xdisp, ydisp = line.split','
-      figure = Figure.new(name.to_s.strip, startDirection.to_s.strip, endDirection.to_s.strip, style.to_s.strip, dance.to_s.strip, startPosition.to_s.strip, endPosition.to_s.strip, timing.to_s.strip, startFoot.to_s.strip, endFoot.to_s.strip, level.to_s.strip, xdisp.to_f, ydisp.to_f)
+      name, startDirection, endDirection, style, dance, startPosition, endPosition, timing, startFoot, endFoot, level, startMomentum, endMomentum, xdisp, ydisp = line.split','
+      figure = Figure.new(name.to_s.strip, startDirection.to_s.strip, endDirection.to_s.strip, style.to_s.strip, dance.to_s.strip, startPosition.to_s.strip, endPosition.to_s.strip, timing.to_s.strip, startFoot.to_s.strip, endFoot.to_s.strip, level.to_s.strip, startMomentum.to_s.strip, endMomentum.to_s.strip, xdisp.to_f, ydisp.to_f)
       fig_data = figure.data
       if !@figureDB.has_key?(fig_data[:level])
         @figureDB[fig_data[:level]] = {}
@@ -94,7 +98,7 @@ class Routine
       if @lastFigure != nil
         lastFigureData = @lastFigure.data
         nextOptionData = nextOption.data
-        if lastFigureData[:endDirection] == nextOptionData[:startDirection] and lastFigureData[:endPosition] == nextOptionData[:startPosition] and lastFigureData[:endFoot] == nextOptionData[:startFoot] and (@totalDistance[1] + nextOptionData[:ydisp]) < @floorDim[1] and (@totalDistance[1] + nextOptionData[:ydisp]) > 0
+        if lastFigureData[:endDirection] == nextOptionData[:startDirection] and lastFigureData[:endPosition] == nextOptionData[:startPosition] and lastFigureData[:endFoot] == nextOptionData[:startFoot] and (@totalDistance[1] + nextOptionData[:ydisp]) < @floorDim[1] and (@totalDistance[1] + nextOptionData[:ydisp]) > 0 and lastFigureData[:endMomentum] == nextOptionData[:startMomentum]
           @figureArray.append(nextOption)
           @totalDistance[0] += nextOptionData[:xdisp]
           @totalDistance[1] += nextOptionData[:ydisp]
